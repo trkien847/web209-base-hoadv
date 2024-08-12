@@ -1,4 +1,32 @@
 {
-  "products": [],
-  "users": []
+  "products": [
+    {
+      "title": "Nakarot",
+      "price": "13000",
+      "isShow": true,
+      "brand": "Apple",
+      "id": 1
+    },
+    {
+      "title": "bale",
+      "price": "123455",
+      "isShow": true,
+      "brand": "Apple",
+      "id": 4
+    },
+    {
+      "title": "nebua",
+      "price": "1500",
+      "isShow": true,
+      "brand": "Apple",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$GHoA5jRVOaOwrTPYDXttfuJ76wdMKGz/8fmhuwj2On2lYhCE13Oqi",
+      "id": 1
+    }
+  ]
 }

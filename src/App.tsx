@@ -1,47 +1,41 @@
-import { Link, useRoutes } from "react-router-dom";
-
+import { useRoutes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { Register } from "./page/Register";
+import { Login } from "./page/Login";
+import 'react-toastify/dist/ReactToastify.css';
+import { LayoutAdmin } from "./LayoutAdmin";
+import { Add } from "./page/Add";
+import { Edit } from "./page/Edit";
+import { List } from "./page/List";
 function App() {
-  const routes = useRoutes([]);
+  const routes = useRoutes([
+    {path: "register",element: <Register/>},
+    {path: "login",element: <Login/>},
+    {
+      path: "/admin",
+      element: <LayoutAdmin />,
+      children: [
+        {
+          path: "product/add",
+          element: <Add />,
+        },
+        {
+          path: "product/edit/:id",
+          element: <Edit />,
+        },
+        {
+          path: "product/list",
+          element: <List />,
+        },
+      ],
+    },
+  ]);
   return (
     <>
-      <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <div className="container">
-          <Link className="navbar-brand" to="/">
-            Thi WEB209
-          </Link>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul
-              className="navbar-nav me-auto mb-2 mb-lg-0"
-              style={{ gap: 3, fontSize: 20 }}
-            >
-              <li className="nav-item">
-                <Link className="nav-link active" to="/register">
-                  Register
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/login">
-                  Login
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/product/add">
-                  Add Product
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/product/list">
-                  List Product
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <button className="btn btn-danger">Logout</button>
-        </div>
-      </nav>
-      <div className="container">{routes}</div>
+      <ToastContainer />
+      <h1 className="text-center">Hello Admin</h1>
+      {routes}
     </>
   );
 }
-
 export default App;
