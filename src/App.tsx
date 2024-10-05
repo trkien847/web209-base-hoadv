@@ -7,7 +7,7 @@ function App() {
       <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            Thi WEB209
+            Dasboard
           </Link>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul
